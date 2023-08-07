@@ -743,7 +743,14 @@ nav .fa-solid {
         #112 50%,
         #213
       ),
-      conic-gradient(from var(--border-angle), transparent 20%, #08f, #f03);
+      conic-gradient(
+        from var(--border-angle),
+        transparent 20%,
+        #ff004f,
+        #ffc400,
+        #6f00ff,
+        rgb(97, 0, 142)
+      );
     background-size: calc(100% - (var(--border-size) * 2))
         calc(100% - (var(--border-size) * 2)),
       cover;
