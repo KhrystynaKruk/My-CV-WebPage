@@ -795,7 +795,8 @@ nav .fa-solid {
 }
 
 #msg {
-  color: #61b752;
+  color: #ffffff;
+  font-weight: bold;
   margin-top: -40px;
   display: block;
 }
