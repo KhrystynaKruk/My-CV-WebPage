@@ -6,12 +6,14 @@
     <title>Khrystyna Kruk</title>
     <link rel="stylesheet" href="./style.css" />
     <script
-      src="https://kit.fontawesome.com/c8c0c59b4b.js"
-      crossorigin="anonymous"
+    src="https://kit.fontawesome.com/c8c0c59b4b.js"
+    crossorigin="anonymous"
     ></script>
   </head>
-
+  
   <body>
+    <!-- top btn -->
+    <button onclick="topFunction()" id="myBtn" class="btn" title="Go to top"><i class="fa-solid fa-arrow-up fa-beat"></i></button>
     <!-- loader -->
     <div id="preloader"></div>
     <div id="header">
@@ -46,6 +48,7 @@
       </div>
     </div>
     <!-- About section -->
+
     <div id="about">
       <div class="container">
         <div class="row">
@@ -73,6 +76,7 @@
               <ul>
                 <li>zaawansowana znajomość HTML, CSS;</li>
                 <li>średnio-zaawansowana znajomość C++,PHP,Javascript;</li>
+                <li>średnio-zaawansowana znajomość Git;</li>
                 <li>zaawansowana znajomość MS Word, Google Docs;</li>
                 <li>średnio-zaawansowana znajomość MS Excel;</li>
                 <li>biegłe tworzenie prezentacji w PowerPoint, Prezi, Docs;</li>
@@ -82,16 +86,16 @@
               </ul>
             </div>
             <!-- <div class="tab-contents" id="soft-skills">
-                        <ul>
-                            <li>zdolność do rozwiązywania problemów;</li>
-                            <li>duża motywacja;</li>
-                            <li>samodzielność i odpowiedzialność za swoją pracę</li>
-                            <li>umiejętność pracy w zespole; </li>
-                            <li>kreatywność; </li>
-                            <li>obowiązkowość i punktualność.</li>
+              <ul>
+                <li>zdolność do rozwiązywania problemów;</li>
+                <li>duża motywacja;</li>
+                <li>samodzielność i odpowiedzialność za swoją pracę</li>
+                <li>umiejętność pracy w zespole; </li>
+                <li>kreatywność; </li>
+                <li>obowiązkowość i punktualność.</li>
                         </ul>
                     </div> -->
-            <div class="tab-contents" id="education">
+                    <div class="tab-contents" id="education">
               <ul>
                 <li>
                   <span>2021-now</span><br />Krakowska Akademia im. Andrzeja
@@ -221,7 +225,7 @@
                 <i class="fa-brands fa-linkedin"></i
               ></a>
             </div>
-            <a href="images/KhrystynaKruk.pdf" download class="btn btn2"
+            <a href="images/KhrystynaKrukCV.pdf" download class="btn btn2"
               >Pobierz CV</a
             >
           </div>
@@ -249,62 +253,6 @@
         <p>Copyright &copy; Khrystyna Kruk</p>
       </div>
     </div>
-    <script>
-      const tablinks = document.getElementsByClassName("tab-links");
-      const tabcontents = document.getElementsByClassName("tab-contents");
-
-      function opentab(tabname) {
-        for (tablink of tablinks) {
-          tablink.classList.remove("active-link");
-        }
-        for (tabcontent of tabcontents) {
-          tabcontent.classList.remove("active-tab");
-        }
-        event.currentTarget.classList.add("active-link");
-        document.getElementById(tabname).classList.add("active-tab");
-      }
-    </script>
-
-    <script>
-      var sidemenu = document.getElementById("sidemenu");
-
-      function openmenu() {
-        sidemenu.style.right = "0";
-      }
-
-      function closemenu() {
-        sidemenu.style.right = "-200px";
-      }
-    </script>
-
-    <script>
-      const scriptURL =
-        "https://script.google.com/macros/s/AKfycbzGZqHYmiKH8U45F-fPgs0JzeY_34k9Cb4bLWQ8n9nHFCIjlITg5wZnHJ16g_DiDu-Q/exec";
-      const form = document.forms["submit-to-google-sheet"];
-      const msg = document.getElementById("msg");
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        fetch(scriptURL, {
-          method: "POST",
-          body: new FormData(form),
-        })
-          .then((response) => {
-            msg.innerHTML = "Message sent succesfully";
-            setTimeout(function () {
-              msg.innerHTML = "";
-            }, 5000);
-            form.reset();
-          })
-          .catch((error) => console.error("Error!", error.message));
-      });
-    </script>
-
-    <!-- loader -->
-    <script>
-      var loader = document.getElementById("preloader");
-      window.addEventListener("load", function () {
-        loader.style.display = "none";
-      });
-    </script>
+    <script src="./script.js"></script>
   </body>
 </html>

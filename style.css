@@ -57,11 +57,18 @@ nav ul li a {
 .animate-charcter {
   text-transform: uppercase;
   background-image: linear-gradient(
-    -225deg,
-    #231557 0%,
-    #44107a 29%,
-    #ff1361 67%,
-    #fff800 100%
+    -250deg,
+    #150844,
+    #2d1291,
+    #150844,
+    #27034f,
+    #27034f,
+    #ff1361,
+    #ff1361,
+    #fff800,
+    #ff1361,
+    #150844,
+    #2d1291
   );
   background-size: auto auto;
   background-clip: border-box;
@@ -70,7 +77,7 @@ nav ul li a {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: textclip 3s linear infinite;
+  animation: textclip 4s linear infinite;
   display: inline-block;
 }
 
@@ -244,7 +251,14 @@ h2 {
       #112 50%,
       #213
     ),
-    conic-gradient(from var(--border-angle), transparent 20%, #08f, #f03);
+    conic-gradient(
+      from var(--border-angle),
+      transparent 20%,
+      rgb(239, 253, 40),
+      #7913ff,
+      #3e13ff,
+      #ff1361
+    );
   background-size: calc(100% - (var(--border-size) * 2))
       calc(100% - (var(--border-size) * 2)),
     cover;
@@ -464,19 +478,87 @@ h2 {
   margin: 50px auto;
   width: fit-content;
   border: 1px solid #ff004f;
+  cursor: pointer;
   padding: 14px 50px;
-  border-radius: 6px;
+  border-radius: 10px;
   text-decoration: none;
   color: #fff;
+  outline: none;
+  background: #ff005100;
+  position: relative;
   transition: all 0.2s ease-in-out;
+  z-index: 0;
 }
 
-.btn:hover {
+/* .btn:hover {
   transform: scale(1.1);
   background-color: #ff004f;
   text-shadow: 1px 1px 2px rgb(255, 255, 255);
+} */
+.btn:before {
+  content: "";
+  background: linear-gradient(
+    -250deg,
+    #150844,
+    #150844,
+    #150844,
+    #27034f,
+    #27034f,
+    #ff1361,
+    #ff1361,
+    #fff800,
+    #150844
+  );
+
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
 }
 
+.btn:active {
+  color: #ff005100;
+}
+
+.btn:active:after {
+  background: transparent;
+}
+
+.btn:hover:before {
+  opacity: 1;
+}
+
+.btn:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #ff005100;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
 /* ---contact--- */
 
 #contact {
@@ -544,7 +626,7 @@ form textarea {
   margin: 20px 0px;
   color: #ffffff;
   font-size: 18px;
-  border-radius: 40px;
+  border-radius: 10px;
 }
 
 form.btn2 {
@@ -727,4 +809,23 @@ nav .fa-solid {
   width: 100%;
   position: fixed;
   z-index: 100;
+}
+/* top button */
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: #ff004f;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  font-size: 15px;
+}
+
+#myBtn:hover {
+  background-color: #555;
 }
