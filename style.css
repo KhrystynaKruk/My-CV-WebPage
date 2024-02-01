@@ -20,7 +20,7 @@ body {
 #header {
   width: 100%;
   height: 100vh;
-  background-image: url(./images/photo_selfi01.jpg);
+  background-image: url(./images/photo_selfi03.jpg);
   background-size: cover;
   background-position: center;
 }
@@ -104,7 +104,7 @@ nav ul li a:hover::after {
 
 .header-text {
   position: absolute;
-  left: 45%;
+  left: 40%;
   margin-top: 15%;
   font-size: 30px;
 }
@@ -741,13 +741,13 @@ nav .fa-solid {
 /* media for phone */
 @media only screen and (max-width: 600px) {
   #header {
-    background-image: url(images/respimg01.jpg);
+    background-image: url(images/phone02.png);
   }
   .container {
     padding: 5px;
   }
   .header-text {
-    margin-top: 65%;
+    margin-top: 30%;
   }
   .header-text p {
     display: none;
